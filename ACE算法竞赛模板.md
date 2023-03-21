@@ -19,7 +19,7 @@ pair数对： typedef pair<int,int> PII;
 
 动态规划数组命名： int dp[N];
 
-输出换行： #define endl '\n' 
+输出换行： #define xendl putchar(' ') 
     
 
 ```
@@ -48,7 +48,7 @@ void xout(double n, int d) {char s[]="%.0lf";s[2]=d+'0';printf(s, n);}
 void xout(const string &s) {printf("%s", &(s[0]));}
 void xout(const char *s) {printf("%s", s);}
 void xout(char c) {putchar(c);}
-void xendl() {putchar('\n');}
+#define xendl putchar('\n')
 typedef pair<int,int> PII;
 #define xa (x+a[i])
 #define yb (y+b[i])
@@ -85,8 +85,11 @@ n≤30n≤30, 指数级别, dfs+剪枝，状态压缩dp
 n≤100n≤100 => O(n3)O(n3)，floyd，dp，高斯消元
 n≤1000n≤1000 => O(n2)O(n2)，O(n2logn)O(n2logn)，dp，二分，朴素版Dijkstra、朴素版Prim、Bellman-Ford
 n≤10000n≤10000 => O(n∗n√)O(n∗n)，块状链表、分块、莫队
-n≤100000n≤100000 => O(nlogn)O(nlogn) => 各种sort，线段树、树状数组、set/map、heap、拓扑排序、dijkstra+heap、prim+heap、Kruskal、spfa、求凸包、求半平面交、二分、CDQ分治、整体二分、后缀数组、树链剖分、动态树
-n≤1000000n≤1000000 => O(n)O(n), 以及常数较小的 O(nlogn)O(nlogn) 算法 => 单调队列、 hash、双指针扫描、并查集，kmp、AC自动机，常数比较小的 O(nlogn)O(nlogn) 的做法：sort、树状数组、heap、dijkstra、spfa
+n≤100000n≤100000 => O(nlogn)O(nlogn) => 各种sort，线段树、树状数组、set/map、heap、拓扑排序、
+dijkstra+heap、prim+heap、Kruskal、spfa、求凸包、求半平面交、二分、CDQ分治、整体二分、后缀数组、
+树链剖分、动态树
+n≤1000000n≤1000000 => O(n)O(n), 以及常数较小的 O(nlogn)O(nlogn) 算法 => 单调队列、 hash、双指针扫描、
+并查集，kmp、AC自动机，常数比较小的 O(nlogn)O(nlogn) 的做法：sort、树状数组、heap、dijkstra、spfa
 n≤10000000n≤10000000 => O(n)O(n)，双指针扫描、kmp、AC自动机、线性筛素数
 n≤109n≤109 => O(n√)O(n)，判断质数
 n≤1018n≤1018 => O(logn)O(logn)，最大公约数，快速幂，数位DP
@@ -161,7 +164,7 @@ template<typename T> void presum(vector<T> &v) {
 const int N = 100003;//质数更好利用空间
 int h[N];//哈希表
 void init_Hash()
-{memset(h,INF,h+N);}
+{memset(h,INF,sizeof h);}
 int find(int x)//插入哈希和查询哈希这个函数都能满足，如果输出的INF说明是没有t或者返回了一个空位t
 {
     int t = (x%N+N)%N;//保证t为正数
