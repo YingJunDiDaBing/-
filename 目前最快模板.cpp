@@ -4,7 +4,7 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 #define INF 0x3f3f3f3f
-template <class T>inline bool xin(T &ret) {char c; int sgn;if(c=getchar(),c==EOF) return 0;while(c!='-'&&(c<'0'||c>'9')) c=getchar();sgn=(c=='-')?-1:1;ret=(c=='-')?0:(c-'0');while(c=getchar(),c>='0'&&c<='9') ret=ret*10+(c-'0');ret*=sgn;return 1;}
+template <class T>inline void xin(T &ret) {char c; int sgn;if(c=getchar(),c==EOF) return ;while(c!='-'&&(c<'0'||c>'9')) c=getchar();sgn=(c=='-')?-1:1;ret=(c=='-')?0:(c-'0');while(c=getchar(),c>='0'&&c<='9') ret=ret*10+(c-'0');ret*=sgn;return ;}
 template <class T>inline void xout(T x) {if(x>9) xout(x/10);putchar(x%10+'0');}
 inline void xin(float &n) {scanf("%f", &n);}
 inline void xin(double &n) {scanf("%lf", &n);}
